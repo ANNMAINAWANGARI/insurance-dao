@@ -3,10 +3,18 @@
 import Footer from "@/components/Footer";
 import HomeCard from "@/components/HomeCard";
 import Image from "next/image";
+import { useAppSelector, useAppDispatch } from '../app/hooks'
+import {openModal,closeModal} from '../redux/features/modal/logInModalSlice'
+import {login,logout,loggedInStatus} from '../redux/features/login/loggedInSlice'
+import LoginModal from "@/components/modals/LoginModal";
 
 export default function Home() {
+  const loggedIn = useAppSelector((state) => state.loggedIn.loggedIn)
+  const logInModalState = useAppSelector((state)=>state.logInModalState.logInModalState)
+  const dispatch = useAppDispatch()
   return (
-    <main className="flex h-screen flex-col items-center px-10 py-5 bg-white text-black w-full overflow-y-scroll">
+    <div className="relative">
+    <main className={`${logInModalState && "blur-[90px]"} flex h-screen flex-col items-center px-10 py-5 bg-white text-black w-full overflow-y-scroll relative`}>
       <HomeCard/>
       
       <div className="rounded-lg w-full  bg-cover bg-no-repeat bg-center mt-5 h-5/6 flex items-center justify-center  bg-[linear-gradient(to_right_bottom,rgba(29,32,39,0.7),rgba(3,7,16,0.9)),url('../public/climb.jpg')] tracking-wider" >
@@ -83,10 +91,9 @@ export default function Home() {
       </div>
       <Footer/>
       
-
-      
-
      
     </main>
+    {logInModalState && <LoginModal/>}
+    </div>
   );
 }

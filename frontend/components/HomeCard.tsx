@@ -1,14 +1,25 @@
+'use client'
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation'
+import { useAppSelector, useAppDispatch } from '../app/hooks'
+import {openModal,closeModal} from '../redux/features/modal/logInModalSlice'
+import {login,logout,loggedInStatus} from '../redux/features/login/loggedInSlice'
 
 
 type HomeCardProps = {
     
 };
 
+
 const HomeCard:React.FC<HomeCardProps> = () => {
+  const loggedIn = useAppSelector((state) => state.loggedIn.loggedIn)
+  const logInModalState = useAppSelector((state)=>state.logInModalState.logInModalState)
+
+  const dispatch = useAppDispatch()
   const pathname = usePathname()
+ 
+  
     
     return (
         <div className='w-full flex flex-col'>
@@ -24,7 +35,7 @@ const HomeCard:React.FC<HomeCardProps> = () => {
                 <div className='font-bold'>
                   <Link href='/'>InsuranceDAO</Link>
                 </div>
-                <button className='bg-blue-600 rounded p-2 text-white text-sm'>Signup</button>
+                <button className='bg-blue-600 rounded p-2 text-white text-sm' onClick={()=>dispatch(openModal())}>Signup</button>
             </header>
           </div>
           
