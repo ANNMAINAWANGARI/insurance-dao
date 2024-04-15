@@ -19,6 +19,7 @@ const HomeCard:React.FC<HomeCardProps> = () => {
                     <Link className= {` cursor-pointer hover:underline-offset-8 hover:underline hover:decoration-white hover:text-blue-600 ${pathname === '/' ? 'underline decoration-white text-blue-600 decoration-2 underline-offset-8':''}`} href='/'>Home</Link>
                     <Link className= {` cursor-pointer hover:underline-offset-8 hover:underline hover:decoration-white hover:text-blue-600 ${pathname === '/insurance' ? 'underline decoration-white text-blue-600 decoration-2 underline-offset-8':''}`} href='/insurance'>Insurance</Link>
                     <Link className= {` cursor-pointer hover:underline-offset-8 hover:underline hover:decoration-white hover:text-blue-600 ${pathname === '/dao' ? 'underline decoration-white text-blue-600 decoration-2 underline-offset-8':''}`} href='/dao'>DAO</Link>
+                    <Link className= {` cursor-pointer hover:underline-offset-8 hover:underline hover:decoration-white hover:text-blue-600 ${pathname === '/dashboard' ? 'underline decoration-white text-blue-600 decoration-2 underline-offset-8':''}`} href='/dashboard'>Dashboard</Link>
                 </ul>
                 <div className='font-bold'>
                   <Link href='/'>InsuranceDAO</Link>

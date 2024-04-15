@@ -40,7 +40,7 @@ export default function Home() {
           </div>
     
           {/**second */}
-          <div className="border-2 border-blue-500 flex flex-col rounded-lg p-4 ">
+          <div className="border-2 border-blue-500 flex flex-col rounded-lg p-4 bg-blue-00 ">
             <div className="flex flex-col gap-3">
               <p className="text-lg tracking-tighter font-bold">40XTZ <span className="text-gray-600 text-sm font-light">/month</span></p>
               <p className="font-bold">Enterprise</p>
