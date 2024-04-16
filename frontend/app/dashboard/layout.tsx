@@ -20,7 +20,7 @@ export default function Layout({
       <div className="m-5"><HomeCard/></div>
       
       <div className="flex m-5">
-        <div className=' lg:flex-col  lg:h-screen lg:pr-20 lg:p-7 bg-blue-500 rounded-tr-lg text-white hidden lg:flex md:hidden'>
+        <div className=' lg:flex-col  lg:h-screen lg:pr-20 lg:p-7 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-tr-lg text-white hidden lg:flex md:hidden'>
             <ul className='mt-5 flex flex-col gap-8'>
                 <li className={`flex gap-2 items-center ${pathname === '/dashboard' ?'text-white bg-black rounded py-2 px-4 font-semibold':'text-black text-md'}`}><Link href='/dashboard' className=''>Dashboard</Link></li>
             </ul>
@@ -31,7 +31,7 @@ export default function Layout({
                 <li className={`flex gap-2 items-center ${pathname === '/logout' ?'text-white bg-black rounded py-2 px-4 font-semibold':'text-black text-md'}`}><Link href='/logout' className=''>Logout</Link></li>
             </ul>
         </div>
-        <div>{children}</div>
+        <div className="w-full overflow-y-scroll">{children}</div>
       </div>
     </>
     );
