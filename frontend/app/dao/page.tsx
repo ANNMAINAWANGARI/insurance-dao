@@ -88,7 +88,7 @@ const DAOPage:React.FC<pageProps> = () => {
                           </td>
                         </tr>
                         <tr>
-                          <td className='p-3 text-xs text-gray-700 tracking-wider'>MEV Attack Claim</td>
+                          <td className='p-3 text-xs text-gray-700 tracking-wider'>MEV Claim</td>
                           <td className='p-3 text-sm text-gray-700'>
                             <span className='bg-red-600 px-2 text-sm font-medium rounded-lg bg-opacity-50 tracking-wider text-red-800 '>Cancelled</span>
                           </td>
