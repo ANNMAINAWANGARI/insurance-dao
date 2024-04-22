@@ -16,6 +16,7 @@ contract InsurancePolicy {
         uint256 amount;
         address claimer;
         bool claimed;
+        string evidence;
     }
     mapping(uint => Insurance) public insurances;
     mapping(uint =>InsuranceClaim) public insurancesClaim;
@@ -50,8 +51,10 @@ contract InsurancePolicy {
         insurances[insuranceId].expirationDate = block.timestamp + 365 days;
         insurances[insuranceId].lastPaymentTimestamp = block.timestamp;
     }
-    function createClaim(uint insuranceId, uint256 claim_amount) public{
+    function createClaim(uint insuranceId, uint256 claim_amount,string memory _evidence) public{
         require(insurances[insuranceId].owner ==msg.sender,'Only the insurance owner can create a claim');
+        uint insuranceClaimId = insuranceId;
+        insurancesClaim[insuranceClaimId] = InsuranceClaim(insuranceId, insuranceClaimId, claim_amount, msg.sender, false, _evidence);
 
     }
 }
