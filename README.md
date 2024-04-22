@@ -9,10 +9,10 @@
 ![HomePage](/frontend/public/InsuranceHome.png)
 
 ### InsurancePage
-![InsurancePage](/frontend/assets/InsurancePage.png)
+![InsurancePage](/frontend/public/InsurancePage.png)
 
 ### DAOPage
-![DAOPage](/frontend/assets/InsuranceDAO.png)
+![DAOPage](/frontend/public/InsuranceDAO.png)
 
 ## Account Abstraction
-- EIP 4337 Implementation
+- EIP 4337 Implementation(v1(not tested))
